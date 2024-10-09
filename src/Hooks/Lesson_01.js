@@ -4,6 +4,14 @@ import { useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
+// Side effects
+//Events: Add/remove event listener
+//Observer pattern: Subcribe/unsubcibe
+//Closure
+//Timers: setInterval, setTimeout, clearInterval, clearTimeout
+//useState
+//Mounted/unmounted
+//Call API 
 const orders = [100, 200, 300]
 function Lesson_01() {
 

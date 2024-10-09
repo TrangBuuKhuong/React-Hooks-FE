@@ -13,11 +13,14 @@ import Lesson_07 from './Lesson_07';
 import Lesson_08 from './Lesson_08';
 import Lesson_09 from './Lesson_09';
 import Lesson_10 from './Lesson_10';
+import Lesson_11 from './Lesson_11';
+import Lesson_12 from './Lesson_12';
+import Lesson_13 from './Lesson_13';
 
 
 function LessonList() {
     const [lessons, setLessons] = useState(
-        Array.from({ length: 10 }, (_, index) => `Lesson ${index + 1}`.padStart(8, '0'))
+        Array.from({ length: 13 }, (_, index) => `Lesson ${index + 1}`.padStart(8, '0'))
     );
     const scrollRef = useRef(null);
     return (
@@ -45,6 +48,9 @@ function LessonList() {
                     <Route path='/lesson/8' element={<Lesson_08 />} />
                     <Route path='/lesson/9' element={<Lesson_09 />} />
                     <Route path='/lesson/10' element={<Lesson_10 />} />
+                    <Route path='/lesson/11' element={<Lesson_11 />} />
+                    <Route path='/lesson/12' element={<Lesson_12 />} />
+                    <Route path='/lesson/13' element={<Lesson_13 />} />
                 </Routes>
             </div>
 

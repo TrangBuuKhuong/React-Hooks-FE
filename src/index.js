@@ -6,12 +6,27 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from './Hooks/ThemeContext';
+//fake comment
 
+function emitComment(id) {
+  setInterval(() => {
+    window.dispatchEvent(
+      new CustomEvent(`lesson-${id}`, { detail: `Noi dung commnet cua lesson ${id}` })
+    )
+  }, 2000)
+}
+
+emitComment(1)
+emitComment(2)
+emitComment(3)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </BrowserRouter>
   // </React.StrictMode>
 );
