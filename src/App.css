@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 6vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #1d00cf;
+  min-height: 1vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.promptInput {
+  width: 50vw;
+  height: 30px;
+  /* box-shadow: 5px 8px 12px 0 #4eafff88; */
+  margin: 5px 10px 15px;
+}
+
+.surpriseBox {
+  margin: 30px 0px 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.black-lives-matter {
+  font-size: 4vw;
+  line-height: 8vw;
+  margin: 0;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 900;
+  background: url('/public/galaxy.png');
+  background-size: 40%;
+  background-position: 50% 50%;
+  -webkit-background-clip: text;
+  color: rgba(0,0,0,0.08);
+  animation: zoomout 10s ease 500ms forwards;
+}
+
+@keyframes zoomout {
+  from {
+    background-size: 40%;
+  }
+  to {
+    background-size: 10%;
+  }
+}
+.promptLabel {
+  animation: typeWriter 5s linear 0s infinite alternate;
+}
+
+@keyframes typeWriter {
+  from {
+    margin-left: -200px;
+  }
+  to {
+    margin-left: 200px;
+  }
+}
+
+.imageBox {
+  width: 450px;
+  height: 450px;
+  box-shadow: 0px 0px 20px 0px #0c4f8688;
+  display: flex;
+  justify-content: right;
+  margin: 30px auto 10px;
+}
+
+.recentResults {
+  display: grid;
+  justify-content: right;
+  margin: auto;
+  padding: 5px;
+}
+
+button {
+  height: 35px;
+  background: black;
+  color: white;
+}
+
+.slideShowMessage {
+  height: 30px;
+  margin: 20px 10px 50px 10px;
+  color: grey;
+  font-style: italic;
+}
+
+.loaderMessage {
+  position: absolute;
+  display: block;
+  width: 60%;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.recentImageBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+   z-index: 999;
+  
+}
+
+.recentImage {
+  padding: 10px;
+  height: 150px;
+  width: 150px;
+  z-index: 999;
+}
+
+.imageLabel {
+  white-space: nowrap;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.formBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.formValue {
+  padding: 10px;
+  width: 350px;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #1d00cf;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.form-control {
+  
+  width: 50% !important;
+ margin-right: 5px !important;
+}
+.Input-generate{
+  display: flex;
+  justify-content: center;
+}
+.content-img {
+  --s: 10px;  /* size of the frame */
+  --b: 1px;   /* border thickness */
+  --w: 150px; /* width of the image */
+  --c: #7ddbe6;
+  
+  width: var(--w);
+  aspect-ratio: 1;
+  object-fit: cover;
+  padding: calc(2*var(--s));
+  --_g: var(--c) var(--b),#b2f0e200 0 calc(100% - var(--b)),var(--c) 0;
+  background:
+    linear-gradient(      var(--_g)) 50%/100% var(--_i,100%) no-repeat,
+    linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+  outline: calc(var(--w)/2) solid #0009;
+  outline-offset: calc(var(--w)/-2 - 2*var(--s));
+  transition: .4s;
+  cursor: pointer;
+}
+.content-img:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: calc(var(--s)/-2);
+  --_i: calc(100% - 2*var(--s));
+}
